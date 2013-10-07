@@ -44,6 +44,7 @@ class AppKernel extends Kernel
             new Sylius\Bundle\InventoryBundle\SyliusInventoryBundle(),
             new Sylius\Bundle\TaxonomiesBundle\SyliusTaxonomiesBundle(),
             new Sylius\Bundle\FlowBundle\SyliusFlowBundle(),
+            new Sylius\Bundle\SubscriptionBundle\SyliusSubscriptionBundle(),
 
             new Sylius\Bundle\CoreBundle\SyliusCoreBundle(),
             new Sylius\Bundle\WebBundle\SyliusWebBundle(),

@@ -137,7 +137,7 @@ class Configuration
     {
         $redirect = $this->get('redirect');
 
-        if (null === $redirect || !is_array($redirect)) {
+        if (null === $redirect || !is_array($redirect) || !array_key_exists('parameters', $redirect)) {
             return array();
         }
 

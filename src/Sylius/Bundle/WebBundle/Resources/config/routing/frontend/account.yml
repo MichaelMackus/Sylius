@@ -10,3 +10,6 @@ sylius_account_order:
 
 sylius_account_address:
     resource: @SyliusWebBundle/Resources/config/routing/frontend/account/address.yml
+
+sylius_account_subscription:
+    resource: @SyliusWebBundle/Resources/config/routing/frontend/account/subscription.yml

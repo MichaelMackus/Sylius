@@ -98,6 +98,16 @@ sylius_sales:
         order_item:
             model: Sylius\Bundle\CoreBundle\Model\OrderItem
 
+sylius_subscription:
+    driver: doctrine/orm
+    classes:
+        subscription:
+            model: Sylius\Bundle\CoreBundle\Model\Subscription
+            form:  Sylius\Bundle\SubscriptionBundle\Form\Type\LimitedIntervalSubscriptionType
+            controller: Sylius\Bundle\WebBundle\Controller\Frontend\Account\SubscriptionController
+        subscription_item:
+            model: Sylius\Bundle\CoreBundle\Model\SubscriptionItem
+
 sylius_resource:
     resources:
         sylius.user:

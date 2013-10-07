@@ -1866,6 +1866,50 @@
         <source>sylius.zone_member.members</source>
         <target>Members</target>
       </trans-unit>
+      <trans-unit id="8309731aec517c74f5f06165061065b6" resname="sylius.account.subscription.list">
+        <source>sylius.account.subscription.list</source>
+        <target>My Subscriptions</target>
+      </trans-unit>
+      <trans-unit id="77628d52610cff099a4b1d49508287f0" resname="sylius.account.subscription.details">
+        <source>sylius.account.subscription.details</source>
+        <target>Subscription Details</target>
+      </trans-unit>
+      <trans-unit id="49f69b9088105beba2f2ae19d94a1160" resname="sylius.account.subscription.update">
+        <source>sylius.account.subscription.update</source>
+        <target>Update Subscription</target>
+      </trans-unit>
+      <trans-unit id="40d43dc82104eb5d2796e6c9c1f7408d" resname="sylius.account.subscription.create">
+        <source>sylius.account.subscription.create</source>
+        <target>New Subscription</target>
+      </trans-unit>
+      <trans-unit id="097ed87f94cbe8540f823fad292c79a1" resname="sylius.account.subscription.scheduled_date">
+        <source>sylius.account.subscription.scheduled_date</source>
+        <target>Scheduled Date</target>
+      </trans-unit>
+      <trans-unit id="2c8f2f279705fba253639c2df3c5b89e" resname="sylius.account.subscription.num_items">
+        <source>sylius.account.subscription.num_items</source>
+        <target>Items</target>
+      </trans-unit>
+      <trans-unit id="13bac77fda247a7dae4b6026a07f14d0" resname="sylius.account.subscription.interval">
+        <source>sylius.account.subscription.interval</source>
+        <target>Interval</target>
+      </trans-unit>
+      <trans-unit id="1487dee7c54620a897cf632bb811cfe0" resname="sylius.account.subscription.limit">
+        <source>sylius.account.subscription.limit</source>
+        <target>Limit</target>
+      </trans-unit>
+      <trans-unit id="da627a7e1cdbb8b37d4cb48a80a16287" resname="sylius.account.subscription.no_limit">
+        <source>sylius.account.subscription.no_limit</source>
+        <target>ongoing</target>
+      </trans-unit>
+      <trans-unit id="d9c7ef51662661111bae7fb6c891d614" resname="sylius.account.subscription.product">
+        <source>sylius.account.subscription.product</source>
+        <target>Product</target>
+      </trans-unit>
+      <trans-unit id="006f8950e70b7f3c5ef5fd6e2f47e6ae" resname="sylius.account.subscription.quantity">
+        <source>sylius.account.subscription.quantity</source>
+        <target>Qty</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
