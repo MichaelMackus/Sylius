@@ -21,9 +21,16 @@
             </cascade>
         </one-to-many>
 
+        <one-to-many field="subscriptions" target-entity="Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface" mapped-by="user">
+            <cascade>
+                <cascade-all />
+            </cascade>
+        </one-to-many>
+
         <one-to-one field="billingAddress" target-entity="Sylius\Bundle\AddressingBundle\Model\AddressInterface">
             <join-column name="billing_address_id" />
         </one-to-one>
+
         <one-to-one field="shippingAddress" target-entity="Sylius\Bundle\AddressingBundle\Model\AddressInterface">
             <join-column name="shipping_address_id" />
         </one-to-one>

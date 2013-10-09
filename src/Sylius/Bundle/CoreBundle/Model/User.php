@@ -32,12 +32,14 @@ class User extends BaseUser implements UserInterface
     protected $billingAddress;
     protected $shippingAddress;
     protected $addresses;
+    protected $subscriptions;
 
     public function __construct()
     {
         $this->createdAt = new DateTime();
         $this->orders    = new ArrayCollection();
         $this->addresses = new ArrayCollection();
+        $this->subscriptions = new ArrayCollection();
 
         parent::__construct();
     }
@@ -53,9 +55,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Get orders
-     *
-     * @return ArrayCollection
+     * {@inheritdoc}
      */
     public function getOrders()
     {
@@ -63,10 +63,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Set billingAddress
-     *
-     * @param  AddressInterface $billingAddress
-     * @return User
+     * {@inheritdoc}
      */
     public function setBillingAddress(AddressInterface $billingAddress = null)
     {
@@ -80,9 +77,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Get billingAddress
-     *
-     * @return AddressInterface
+     * {@inheritdoc}
      */
     public function getBillingAddress()
     {
@@ -90,10 +85,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Set shippingAddress
-     *
-     * @param  AddressInterface $shippingAddress
-     * @return User
+     * {@inheritdoc}
      */
     public function setShippingAddress(AddressInterface $shippingAddress = null)
     {
@@ -107,9 +99,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Get shippingAddress
-     *
-     * @return AddressInterface
+     * {@inheritdoc}
      */
     public function getShippingAddress()
     {
@@ -117,10 +107,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Add address
-     *
-     * @param  AddressInterface $address
-     * @return User
+     * {@inheritdoc}
      */
     public function addAddress(AddressInterface $address)
     {
@@ -132,9 +119,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Remove address
-     *
-     * @param AddressInterface $address
+     * {@inheritdoc}
      */
     public function removeAddress(AddressInterface $address)
     {
@@ -142,10 +127,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Has address
-     *
-     * @param  AddressInterface $address
-     * @return bool
+     * {@inheritdoc}
      */
     public function hasAddress(AddressInterface $address)
     {
@@ -153,9 +135,7 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * Get addresses
-     *
-     * @return ArrayCollection
+     * {@inheritdoc}
      */
     public function getAddresses()
     {
@@ -216,5 +196,45 @@ class User extends BaseUser implements UserInterface
         $this->setUsernameCanonical($emailCanonical);
 
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSubscriptions()
+    {
+        return $this->subscriptions;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addSubscription(SubscriptionInterface $subscription)
+    {
+        if (!$this->subscriptions->contains($subscription)) {
+            $this->subscriptions->add($subscription);
+        }
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeSubscription(SubscriptionInterface $subscription)
+    {
+        if ($this->subscriptions->contains($subscription)) {
+            $this->subscriptions->removeElement($subscription);
+        }
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasSubscription(SubscriptionInterface $subscription)
+    {
+        return $this->subscriptions->contains($subscription);
     }
 }
