@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Sylius\Bundle\CoreBundle\Model;
+namespace spec\Sylius\Component\Core\Model;
 
 use PhpSpec\ObjectBehavior;
 
@@ -18,17 +18,17 @@ class SubscriptionSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\CoreBundle\Model\Subscription');
+        $this->shouldHaveType('Sylius\Component\Core\Model\Subscription');
     }
 
     function it_implements_Sylius_core_subscription_interface()
     {
-        $this->shouldImplement('Sylius\Bundle\CoreBundle\Model\SubscriptionInterface');
+        $this->shouldImplement('Sylius\Component\Core\Model\SubscriptionInterface');
     }
 
     function it_extends_Sylius_subscription_bundle_subscription()
     {
-        $this->shouldHaveType('Sylius\Bundle\SubscriptionBundle\Model\Subscription');
+        $this->shouldHaveType('Sylius\Component\Subscription\Model\Subscription');
     }
 
     function it_has_no_user_by_default()
@@ -37,7 +37,7 @@ class SubscriptionSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\CoreBundle\Model\UserInterface $user
+     * @param Sylius\Component\Core\Model\UserInterface $user
      */
     function its_user_is_mutable($user)
     {
@@ -51,7 +51,7 @@ class SubscriptionSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\AddressingBundle\Model\AddressInterface $address
+     * @param Sylius\Component\Core\Model\AddressInterface $address
      */
     function its_shipping_address_is_mutable($address)
     {

@@ -9,14 +9,13 @@
 * file that was distributed with this source code.
 */
 
-namespace Sylius\Bundle\SubscriptionBundle\Processor;
-
+namespace Sylius\Component\Subscription\Processor;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvent;
-use Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvents;
-use Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface;
-use Sylius\Bundle\SubscriptionBundle\Repository\SubscriptionRepositoryInterface;
+use Sylius\Component\Subscription\Event\SubscriptionEvent;
+use Sylius\Component\Subscription\Event\SubscriptionEvents;
+use Sylius\Component\Subscription\Model\SubscriptionInterface;
+use Sylius\Component\Subscription\Repository\SubscriptionRepositoryInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 

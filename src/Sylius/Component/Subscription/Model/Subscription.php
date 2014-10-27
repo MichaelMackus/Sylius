@@ -9,10 +9,10 @@
 * file that was distributed with this source code.
 */
 
-namespace Sylius\Bundle\SubscriptionBundle\Model;
+namespace Sylius\Component\Subscription\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Sylius\Bundle\ResourceBundle\Model\TimestampableInterface;
+use Sylius\Component\Resource\Model\TimestampableInterface;
 
 /**
  * Subscription entity

@@ -9,7 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sylius\Bundle\CoreBundle\Model;
+namespace Sylius\Component\Core\Model;
+
+use Sylius\Component\Product\Model\VariantInterface;
 
 /**
  * SubscriptionItemInterface

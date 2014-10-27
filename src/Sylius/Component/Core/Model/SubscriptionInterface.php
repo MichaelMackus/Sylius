@@ -9,10 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sylius\Bundle\CoreBundle\Model;
+namespace Sylius\Component\Core\Model;
 
-use Sylius\Bundle\AddressingBundle\Model\AddressInterface;
-use Sylius\Bundle\SubscriptionBundle\Model\RecurringSubscriptionInterface;
+use Sylius\Component\Subscription\Model\RecurringSubscriptionInterface;
 
 /**
  * SubscriptionInterface

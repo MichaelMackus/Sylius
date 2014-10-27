@@ -31,8 +31,9 @@ class MaxCyclesListenerSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\RecurringSubscriptionInterface $subscription
-     * @param Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvent $event
+     * @param Sylius\Component\Subscription\Model\RecurringSubscriptionInterface $subscription
+     * @param Sylius\Component\Subscription\Event\SubscriptionEvent $event
+     * @param Doctrine\Common\Persistence\ObjectManager $manager
      */
     function it_decrements_max_cycles($subscription, $event, $manager)
     {
@@ -46,8 +47,9 @@ class MaxCyclesListenerSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\RecurringSubscriptionInterface $subscription
-     * @param Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvent $event
+     * @param Sylius\Component\Subscription\Model\RecurringSubscriptionInterface $subscription
+     * @param Sylius\Component\Subscription\Event\SubscriptionEvent $event
+     * @param Doctrine\Common\Persistence\ObjectManager $manager
      */
     function it_does_nothing_when_max_cycles_is_null($subscription, $event, $manager)
     {
@@ -61,8 +63,9 @@ class MaxCyclesListenerSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\RecurringSubscriptionInterface $subscription
-     * @param Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvent $event
+     * @param Sylius\Component\Subscription\Model\RecurringSubscriptionInterface $subscription
+     * @param Sylius\Component\Subscription\Event\SubscriptionEvent $event
+     * @param Doctrine\Common\Persistence\ObjectManager $manager
      */
     function it_removes_subscription_when_max_cycles_hits_zero($subscription, $event, $manager)
     {

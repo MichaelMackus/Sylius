@@ -18,17 +18,17 @@ class RecurringSchedulerSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\SubscriptionBundle\Scheduler\RecurringScheduler');
+        $this->shouldHaveType('Sylius\Component\Subscription\Scheduler\RecurringScheduler');
     }
 
     function it_implements_Sylius_recurring_scheduler_interface()
     {
-        $this->shouldImplement('Sylius\Bundle\SubscriptionBundle\Scheduler\RecurringSchedulerInterface');
+        $this->shouldImplement('Sylius\Component\Subscription\Scheduler\RecurringSchedulerInterface');
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SchedulableInterface $schedulable
-     * @param Sylius\Bundle\SubscriptionBundle\Model\RecurringInterface $recurring
+     * @param Sylius\Component\Subscription\Model\SchedulableInterface $schedulable
+     * @param Sylius\Component\Subscription\Model\RecurringInterface $recurring
      */
     function it_should_schedule_properly($schedulable, $recurring)
     {

@@ -14,7 +14,7 @@ namespace Sylius\Bundle\WebBundle\Controller\Frontend\Account;
 
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
-use Sylius\Bundle\CoreBundle\Model\SubscriptionInterface;
+use Sylius\Component\Core\Model\SubscriptionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
@@ -54,9 +54,12 @@ class SubscriptionController extends ResourceController
         }
     }
 
-    public function findOr404(array $criteria = null)
+    /**
+     * {@inheritdoc}
+     */
+    public function findOr404(Request $request, array $criteria = array())
     {
-        if ($resource = parent::findOr404($criteria)) {
+        if ($resource = parent::findOr404($request, $criteria)) {
             $this->accessSubscriptionOr403($resource);
         }
 

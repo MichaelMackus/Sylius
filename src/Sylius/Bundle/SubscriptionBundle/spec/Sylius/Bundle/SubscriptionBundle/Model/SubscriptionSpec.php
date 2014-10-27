@@ -20,12 +20,12 @@ class SubscriptionSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\SubscriptionBundle\Model\Subscription');
+        $this->shouldHaveType('Sylius\Component\Subscription\Model\Subscription');
     }
 
     function it_implements_Sylius_subscription_interface()
     {
-        $this->shouldImplement('Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface');
+        $this->shouldImplement('Sylius\Component\Subscription\Model\SubscriptionInterface');
     }
 
     function it_has_no_id_by_default()
@@ -70,7 +70,7 @@ class SubscriptionSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionItemInterface $item
+     * @param Sylius\Component\Subscription\Model\SubscriptionItemInterface $item
      */
     function it_adds_items_properly($item)
     {
@@ -84,7 +84,7 @@ class SubscriptionSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionItemInterface $item
+     * @param Sylius\Component\Subscription\Model\SubscriptionItemInterface $item
      */
     function it_removes_items_properly($item)
     {

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Sylius\Bundle\CoreBundle\Model;
+namespace spec\Sylius\Component\Core\Model;
 
 use PhpSpec\ObjectBehavior;
 
@@ -18,17 +18,17 @@ class SubscriptionItemSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\CoreBundle\Model\SubscriptionItem');
+        $this->shouldHaveType('Sylius\Component\Core\Model\SubscriptionItem');
     }
 
     function it_implements_Sylius_core_subscription_item_interface()
     {
-        $this->shouldImplement('Sylius\Bundle\CoreBundle\Model\SubscriptionItemInterface');
+        $this->shouldImplement('Sylius\Component\Core\Model\SubscriptionItemInterface');
     }
 
     function it_extends_Sylius_subscription_bundle_subscription_item()
     {
-        $this->shouldHaveType('Sylius\Bundle\SubscriptionBundle\Model\SubscriptionItem');
+        $this->shouldHaveType('Sylius\Component\Subscription\Model\SubscriptionItem');
     }
 
     function it_has_no_variant_by_default()
@@ -37,7 +37,7 @@ class SubscriptionItemSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\CoreBundle\Model\VariantInterface $variant
+     * @param Sylius\Component\Product\Model\VariantInterface $variant
      */
     function its_variant_is_mutable($variant)
     {
@@ -46,8 +46,8 @@ class SubscriptionItemSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\CoreBundle\Model\VariantInterface $variant
-     * @param Sylius\Bundle\CoreBundle\Model\ProductInterface $product
+     * @param Sylius\Component\Product\Model\VariantInterface $variant
+     * @param Sylius\Component\Core\Model\ProductInterface $product
      */
     function it_should_return_product_from_variant($variant, $product)
     {

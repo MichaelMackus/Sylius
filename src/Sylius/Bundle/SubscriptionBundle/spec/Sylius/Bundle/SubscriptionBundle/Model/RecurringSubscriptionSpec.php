@@ -20,12 +20,12 @@ class RecurringSubscriptionSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\SubscriptionBundle\Model\RecurringSubscription');
+        $this->shouldHaveType('Sylius\Component\Subscription\Model\RecurringSubscription');
     }
 
     function it_implements_Sylius_subscription_interface()
     {
-        $this->shouldImplement('Sylius\Bundle\SubscriptionBundle\Model\RecurringSubscriptionInterface');
+        $this->shouldImplement('Sylius\Component\Subscription\Model\RecurringSubscriptionInterface');
     }
 
     function it_has_no_interval_unit_by_default()

@@ -9,7 +9,7 @@
 * file that was distributed with this source code.
 */
 
-namespace Sylius\Bundle\SubscriptionBundle\Repository;
+namespace Sylius\Component\Subscription\Repository;
 
 /**
  * Subscription repository interface

@@ -9,11 +9,10 @@
 * file that was distributed with this source code.
 */
 
-namespace Sylius\Bundle\SubscriptionBundle\Scheduler;
+namespace Sylius\Component\Subscription\Scheduler;
 
-
-use Sylius\Bundle\SubscriptionBundle\Model\SchedulableInterface;
-use Sylius\Bundle\SubscriptionBundle\Model\RecurringInterface;
+use Sylius\Component\Subscription\Model\SchedulableInterface;
+use Sylius\Component\Subscription\Model\RecurringInterface;
 
 /**
  * RecurringScheduler implementation

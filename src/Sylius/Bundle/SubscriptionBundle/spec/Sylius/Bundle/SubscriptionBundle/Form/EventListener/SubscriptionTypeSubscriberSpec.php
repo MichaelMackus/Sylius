@@ -28,9 +28,9 @@ class SubscriptionTypeSubscriberSpec extends ObjectBehavior
 
     /**
      * @param Symfony\Component\Form\FormEvent $event
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface $subscription
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionItemInterface $item
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionItemInterface $itemZeroQuantity
+     * @param Sylius\Component\Subscription\Model\SubscriptionInterface $subscription
+     * @param Sylius\Component\Subscription\Model\SubscriptionItemInterface $item
+     * @param Sylius\Component\Subscription\Model\SubscriptionItemInterface $itemZeroQuantity
      * @param Symfony\Component\Form\Form $form
      */
     function it_removes_zero_quantity_items_from_subscription($event, $subscription, $item, $itemZeroQuantity, $form)
@@ -55,9 +55,9 @@ class SubscriptionTypeSubscriberSpec extends ObjectBehavior
 
     /**
      * @param Symfony\Component\Form\FormEvent $event
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface $subscription
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionItemInterface $item
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionItemInterface $itemZeroQuantity
+     * @param Sylius\Component\Subscription\Model\SubscriptionInterface $subscription
+     * @param Sylius\Component\Subscription\Model\SubscriptionItemInterface $item
+     * @param Sylius\Component\Subscription\Model\SubscriptionItemInterface $itemZeroQuantity
      * @param Symfony\Component\Form\Form $form
      */
     function it_does_not_remove_items_when_form_is_invalid($event, $subscription, $item, $itemZeroQuantity, $form)

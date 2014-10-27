@@ -23,7 +23,7 @@ class RecurringSchedulerListenerSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Scheduler\RecurringSchedulerInterface $scheduler
+     * @param Sylius\Component\Subscription\Scheduler\RecurringSchedulerInterface $scheduler
      */
     function let($scheduler)
     {
@@ -31,8 +31,8 @@ class RecurringSchedulerListenerSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\RecurringSubscriptionInterface $subscription
-     * @param Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvent $event
+     * @param Sylius\Component\Subscription\Model\RecurringSubscriptionInterface $subscription
+     * @param Sylius\Component\Subscription\Event\SubscriptionEvent $event
      */
     function it_decrements_max_cycles($subscription, $event, $scheduler)
     {

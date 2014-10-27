@@ -9,9 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sylius\Bundle\CoreBundle\Model;
+namespace Sylius\Component\Core\Model;
 
-use Sylius\Bundle\SubscriptionBundle\Model\SubscriptionItem as BaseSubscriptionItem;
+use Sylius\Component\Subscription\Model\SubscriptionItem as BaseSubscriptionItem;
+use Sylius\Component\Product\Model\VariantInterface;
 
 /**
  * SubscriptionItem implementation

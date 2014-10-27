@@ -9,17 +9,17 @@
 * file that was distributed with this source code.
 */
 
-namespace Sylius\Bundle\SubscriptionBundle\Event;
+namespace Sylius\Component\Subscription\Event;
 
-use Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface;
-use Symfony\Component\EventDispatcher\GenericEvent;
+use Sylius\Component\Resource\Event\ResourceEvent;
+use Sylius\Component\Subscription\Model\SubscriptionInterface;
 
 /**
  * SubscriptionEvent
  *
  * @author Daniel Richter <nexyz9@gmail.com>
  */
-class SubscriptionEvent extends GenericEvent
+class SubscriptionEvent extends ResourceEvent
 {
     public function __construct(SubscriptionInterface $subscription, array $arguments = array())
     {

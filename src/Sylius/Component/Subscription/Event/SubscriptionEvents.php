@@ -9,7 +9,7 @@
 * file that was distributed with this source code.
 */
 
-namespace Sylius\Bundle\SubscriptionBundle\Event;
+namespace Sylius\Component\Subscription\Event;
 
 /**
  * Subscription events

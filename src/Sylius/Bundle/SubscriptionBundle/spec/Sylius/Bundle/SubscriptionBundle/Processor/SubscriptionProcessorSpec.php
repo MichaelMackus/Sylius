@@ -13,12 +13,12 @@ namespace spec\Sylius\Bundle\SubscriptionBundle\Processor;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvents;
+use Sylius\Component\Subscription\Event\SubscriptionEvents;
 
 class SubscriptionProcessorSpec extends ObjectBehavior
 {
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Repository\SubscriptionRepositoryInterface $repository
+     * @param Sylius\Component\Subscription\Repository\SubscriptionRepositoryInterface $repository
      * @param Doctrine\Common\Persistence\ObjectManager $manager
      * @param Symfony\Component\EventDispatcher\EventDispatcher $dispatcher
      */
@@ -29,17 +29,18 @@ class SubscriptionProcessorSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Sylius\Bundle\SubscriptionBundle\Processor\SubscriptionProcessor');
+        $this->shouldHaveType('Sylius\Component\Subscription\Processor\SubscriptionProcessor');
     }
 
     function it_implements_Sylius_recurring_scheduler_interface()
     {
-        $this->shouldImplement('Sylius\Bundle\SubscriptionBundle\Processor\SubscriptionProcessorInterface');
+        $this->shouldImplement('Sylius\Component\Subscription\Processor\SubscriptionProcessorInterface');
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface $subscription
-     * @param Symfony\Component\EventDispatcher\GenericEvent $event
+     * @param Sylius\Component\Subscription\Repository\SubscriptionRepositoryInterface $repository
+     * @param Symfony\Component\EventDispatcher\EventDispatcher $dispatcher
+     * @param Sylius\Component\Subscription\Model\SubscriptionInterface $subscription
      */
     function it_should_dispatch_events($repository, $dispatcher, $subscription)
     {
@@ -55,21 +56,21 @@ class SubscriptionProcessorSpec extends ObjectBehavior
             ->shouldBeCalled();
 
         $dispatcher
-            ->dispatch(SubscriptionEvents::SUBSCRIPTION_PROCESS_INITIALIZE, Argument::type('Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvent'))
+            ->dispatch(SubscriptionEvents::SUBSCRIPTION_PROCESS_INITIALIZE, Argument::type('Sylius\Component\Subscription\Event\SubscriptionEvent'))
             ->shouldBeCalled();
         $dispatcher
-            ->dispatch(SubscriptionEvents::SUBSCRIPTION_PROCESS_SUCCESS, Argument::type('Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvent'))
+            ->dispatch(SubscriptionEvents::SUBSCRIPTION_PROCESS_SUCCESS, Argument::type('Sylius\Component\Subscription\Event\SubscriptionEvent'))
             ->shouldBeCalled();
         $dispatcher
-            ->dispatch(SubscriptionEvents::SUBSCRIPTION_PROCESS_COMPLETED, Argument::type('Sylius\Bundle\SubscriptionBundle\Event\SubscriptionEvent'))
+            ->dispatch(SubscriptionEvents::SUBSCRIPTION_PROCESS_COMPLETED, Argument::type('Sylius\Component\Subscription\Event\SubscriptionEvent'))
             ->shouldBeCalled();
 
         $this->process();
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface $subscription
-     * @param Symfony\Component\EventDispatcher\GenericEvent $event
+     * @param Sylius\Component\Subscription\Repository\SubscriptionRepositoryInterface $repository
+     * @param Sylius\Component\Subscription\Model\SubscriptionInterface $subscription
      */
     function it_should_set_processed_date($repository, $subscription)
     {
@@ -83,8 +84,9 @@ class SubscriptionProcessorSpec extends ObjectBehavior
     }
 
     /**
-     * @param Sylius\Bundle\SubscriptionBundle\Model\SubscriptionInterface $subscription
-     * @param Symfony\Component\EventDispatcher\GenericEvent $event
+     * @param Sylius\Component\Subscription\Repository\SubscriptionRepositoryInterface $repository
+     * @param Doctrine\Common\Persistence\ObjectManager $manager
+     * @param Sylius\Component\Subscription\Model\SubscriptionInterface $subscription
      */
     function it_should_persist_entity($repository, $manager, $subscription)
     {

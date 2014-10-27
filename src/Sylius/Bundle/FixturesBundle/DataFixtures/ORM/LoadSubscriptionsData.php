@@ -9,9 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sylius\Bundle\CoreBundle\DataFixtures\ORM;
+namespace Sylius\Bundle\FixturesBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use Sylius\Bundle\FixturesBundle\DataFixtures\DataFixture;
 
 /**
  * Sample subscription data
@@ -31,7 +32,7 @@ class LoadSubscriptionsData extends DataFixture
 
         for ($i = 0;$i <= $numUsers;$i++) {
 
-            $user = $this->getReference(($i == 0) ? 'User-Administrator' : 'Sylius.User-'.$i);
+            $user = $this->getReference(($i == 0) ? 'Sylius.User-Administrator' : 'Sylius.User-'.$i);
 
             $numSubscriptions = rand(1, 5);
 
